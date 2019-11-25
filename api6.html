@@ -1,0 +1,60 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+<body class="bg">
+	<h1><center><u><i><b>Bitcoin</b></i></u></center></h1>
+<ol> </ol>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script>
+		
+		/*window.onload=function(){
+		$.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=dcdabadbf30a481da089f084695d838f',
+			function(data,status)
+			{
+				for(let i=0;i<8;i++){
+				$('ul').append('<li class ="title">' + '<h3>' + data.articles[i].title + '<h3>' + '</li>' )
+				$('ul').append('<li class="description">' + data.articles[i].description + '</li>' )
+			
+			    }
+				$('p').text(data.articles[0].author);
+
+			});
+	   } */
+	   
+	   
+		var query;
+		//$(document).ready(function(){
+		window.onload=function(){
+		console.log("Click event");
+		$.get('https://newsapi.org/v2/everything?q=bitcoin&apiKey=dcdabadbf30a481da089f084695d838f',
+			function(data,status)
+			{
+				for(let i=1;i<6;i++)
+				{
+				$('ol').append('<li class ="title">' +'<h2>'+'author name' +' ' +[i]+ ':'+  '</h2>' + data.articles[i].author  + '</li>' )
+				
+				$('ol').append('<li class ="title">' +'<h2>' +'title' +' ' +[i] + ':' + '</h2>' + data.articles[i].title  + '</li>' )
+				
+				 $('ol').append('<li class="description">' +'<h2>'+'discription' +' ' + [i] +':' + '</h2>'+  data.articles[i].description + '</li>' )
+				
+			    $('ol').append('<li class="publishedAt">' + '<h2>' +'publish at' +' ' +[i] +':' +  '</h2>'+ data.articles[i].publishedAt + '</li>')
+			    
+			    $('ol').append('<li class ="title">' + '<h2>'+'url' +' ' +' ' +[i]+':' + '</h2>' + data.articles[i].url  + '</li>' )
+			    
+			    $('ol').append('<li class ="title">'+ '<h2>' + 'urlToImage' +' ' +[i] + ':'+ '</h2>' + data.articles[i].urlToImage  + '</li>' )
+			    
+			    $('ol').append('<li class ="title">' + '<h2>'+ 'content' +' ' +[i]+ ':' +'</h2>' + data.articles[i].content + '</li>' )
+			    
+				//$('#p1').text(data.articles[0].title);
+				
+              }
+			});
+	   };
+	</script>
+
+</body>
+</html>
+

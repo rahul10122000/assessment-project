@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+<body class="bg">
+	<h1><center><u><b><i>Sources With English News in the US</i></b></u></center></h1>
+<ol> </ol>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script>
+		
+		/*window.onload=function(){
+		$.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=dcdabadbf30a481da089f084695d838f',
+			function(data,status)
+			{
+				for(let i=0;i<8;i++){
+				$('ul').append('<li class ="title">' + '<h3>' + data.articles[i].title + '<h3>' + '</li>' )
+				$('ul').append('<li class="description">' + data.articles[i].description + '</li>' )
+			
+			    }
+				$('p').text(data.articles[0].author);
+
+			});
+	   } */
+	   
+	   
+		var query;
+		//$(document).ready(function(){
+		window.onload=function(){
+		console.log("Click event");
+		$.get('https://newsapi.org/v2/sources?language=en&country=us&apiKey=dcdabadbf30a481da089f084695d838f',
+			function(data,status)
+			{
+				for(let i=1;i<6;i++)
+				{
+					$('ol').append('<li class ="title">'+'<h2>' +'id'+' '+[i]+ '</h2>' + data.sources[i].id  + '</li>' )
+				$('ol').append('<li class ="title">' +'<h2>'+ 'name'+' '+[i]+'</h2>' + data.sources[i].name  + '</li>' )
+				$('ol').append('<li class="description">' +'<h2>' +'description'+' '+[i]+'</h2>'+ data.sources[i].description + '</li>' )
+			    $('ol').append('<li class="publishedAt">'+'<h2>' + 'category'+' '+[i]+'</h2>'+ data.sources[i].category + '</li>')
+			    $('ol').append('<li class ="title">' +'<h2>' + 'url'+' '+[i]+ '</h2>' + data.sources[i].url  + '</li>' )
+			    $('ol').append('<li class ="title">'+'<h2>' + 'language'+' '+[i]+'</h2>' + data.sources[i].language  + '</li>' )
+			    $('ol').append('<li class ="title">' +'<h2>' + 'country'+' '+[i]+'</h2>' + data.sources[i].country  + '</li>' )
+			    
+				//$('#p1').text(data.articles[0].title);
+				
+             } 
+			});
+	   };
+	</script>
+</body>
+</html>
+
